@@ -103,6 +103,8 @@ class Grepper():
             print(f"解析结果异常: {err}")
             return issues
         results = datas["results"]
+        if not results:
+            return issues
         for data in results:
             issue_rule = data["rule_id"]
             issue_msg = data["description"]
